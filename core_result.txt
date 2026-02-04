@@ -1,0 +1,210 @@
+PS E:\RAW_DATA> & D:/Anaconda/envs/pytorch/python.exe e:/RAW_DATA/scripts/09R_train_residual_corrector.py
+Base Pred Stats: mu=0.8243 std=0.0213
+Start RESIDUAL+CTX | BASE=pred_core MODEL=mlp | seq_len=64 d_in=30 | train=190175 val=17943 test=55546 | LR=0.001 WD=0.0001 EPOCHS=15 BATCH=512
+Residual standardize: mu=0.000672 std=0.029226
+Epoch 01 | lr=9.89e-04 | train_loss=0.233660 | VAL base_MAE=0.021844 final_MAE=0.018283 resid_MAE=0.018283 | gamma=0.775
+Epoch 02 | lr=9.58e-04 | train_loss=0.162217 | VAL base_MAE=0.021844 final_MAE=0.017214 resid_MAE=0.017214 | gamma=0.800
+Epoch 03 | lr=9.06e-04 | train_loss=0.137955 | VAL base_MAE=0.021844 final_MAE=0.017955 resid_MAE=0.017955 | gamma=0.750
+Epoch 04 | lr=8.38e-04 | train_loss=0.121607 | VAL base_MAE=0.021844 final_MAE=0.017055 resid_MAE=0.017055 | gamma=0.850
+Epoch 05 | lr=7.55e-04 | train_loss=0.110036 | VAL base_MAE=0.021844 final_MAE=0.016995 resid_MAE=0.016995 | gamma=0.850
+Epoch 06 | lr=6.61e-04 | train_loss=0.101325 | VAL base_MAE=0.021844 final_MAE=0.017960 resid_MAE=0.017960 | gamma=0.800
+Epoch 07 | lr=5.61e-04 | train_loss=0.094239 | VAL base_MAE=0.021844 final_MAE=0.017425 resid_MAE=0.017425 | gamma=0.800
+Epoch 08 | lr=4.59e-04 | train_loss=0.088061 | VAL base_MAE=0.021844 final_MAE=0.017268 resid_MAE=0.017268 | gamma=0.850
+Epoch 09 | lr=3.59e-04 | train_loss=0.084000 | VAL base_MAE=0.021844 final_MAE=0.017383 resid_MAE=0.017383 | gamma=0.825
+Epoch 10 | lr=2.65e-04 | train_loss=0.080284 | VAL base_MAE=0.021844 final_MAE=0.017295 resid_MAE=0.017295 | gamma=0.800
+Epoch 11 | lr=1.82e-04 | train_loss=0.077611 | VAL base_MAE=0.021844 final_MAE=0.017447 resid_MAE=0.017447 | gamma=0.825
+Epoch 12 | lr=1.14e-04 | train_loss=0.075724 | VAL base_MAE=0.021844 final_MAE=0.017492 resid_MAE=0.017492 | gamma=0.800
+Epoch 13 | lr=6.24e-05 | train_loss=0.074332 | VAL base_MAE=0.021844 final_MAE=0.017373 resid_MAE=0.017373 | gamma=0.800
+Epoch 14 | lr=3.07e-05 | train_loss=0.073165 | VAL base_MAE=0.021844 final_MAE=0.017526 resid_MAE=0.017526 | gamma=0.800
+Epoch 15 | lr=2.00e-05 | train_loss=0.072076 | VAL base_MAE=0.021844 final_MAE=0.017423 resid_MAE=0.017423 | gamma=0.825
+[VAL]  base_MAE=0.021844 | final_MAE=0.016995 | resid_MAE=0.016995 | n=17943 | gamma=0.850
+[TEST] base_MAE=0.021760 | final_MAE=0.017273 | resid_MAE=0.017273 | n=55546 | gamma=0.850
+Saved model: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\model_RESCTX_OOF_pred_core_mlp.pt
+Saved: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\predictions_val_RESCTX_OOF_pred_core_mlp.csv
+Saved: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\predictions_test_RESCTX_OOF_pred_core_mlp.csv
+PS E:\RAW_DATA> & D:/Anaconda/envs/pytorch/python.exe e:/RAW_DATA/scripts/09Z_train_best.py
+Base HGBR MAE: 0.021760
+Gamma=0.00 | MAE=0.021760
+Gamma=0.05 | MAE=0.021290
+Gamma=0.10 | MAE=0.020836
+Gamma=0.15 | MAE=0.020402
+Gamma=0.20 | MAE=0.019989
+Gamma=0.25 | MAE=0.019597
+Gamma=0.30 | MAE=0.019228
+Gamma=0.35 | MAE=0.018886
+Gamma=0.40 | MAE=0.018571
+Gamma=0.45 | MAE=0.018286
+Gamma=0.50 | MAE=0.018032
+Gamma=0.55 | MAE=0.017812
+Gamma=0.60 | MAE=0.017629
+Gamma=0.65 | MAE=0.017480
+Gamma=0.70 | MAE=0.017370
+Gamma=0.75 | MAE=0.017300
+Gamma=0.80 | MAE=0.017268
+Gamma=0.85 | MAE=0.017273
+Gamma=0.90 | MAE=0.017313
+Gamma=0.95 | MAE=0.017393
+Gamma=1.00 | MAE=0.017520
+------------------------------
+【最佳结果】 mlp Gamma = 0.82
+【最低 MAE】 0.017266
+【提升幅度】 -20.12%
+
+PS E:\RAW_DATA> & D:/Anaconda/envs/pytorch/python.exe e:/RAW_DATA/scripts/09R_train_residual_corrector.py
+Base Pred Stats: mu=0.8243 std=0.0213
+Start RESIDUAL+CTX | BASE=pred_core MODEL=gru | seq_len=64 d_in=30 | train=190175 val=17943 test=55546 | LR=0.001 WD=0.0001 EPOCHS=15 BATCH=512
+Residual standardize: mu=0.000672 std=0.029226
+Epoch 01 | lr=9.89e-04 | train_loss=0.217651 | VAL base_MAE=0.021844 final_MAE=0.018290 resid_MAE=0.018290 | gamma=0.725
+Epoch 02 | lr=9.58e-04 | train_loss=0.109169 | VAL base_MAE=0.021844 final_MAE=0.017939 resid_MAE=0.017939 | gamma=0.775
+Epoch 03 | lr=9.06e-04 | train_loss=0.068522 | VAL base_MAE=0.021844 final_MAE=0.016078 resid_MAE=0.016078 | gamma=0.800
+Epoch 04 | lr=8.38e-04 | train_loss=0.044920 | VAL base_MAE=0.021844 final_MAE=0.017313 resid_MAE=0.017313 | gamma=0.725
+Epoch 05 | lr=7.55e-04 | train_loss=0.031908 | VAL base_MAE=0.021844 final_MAE=0.016633 resid_MAE=0.016633 | gamma=0.825
+Epoch 06 | lr=6.61e-04 | train_loss=0.023893 | VAL base_MAE=0.021844 final_MAE=0.016331 resid_MAE=0.016331 | gamma=0.825
+Epoch 07 | lr=5.61e-04 | train_loss=0.019143 | VAL base_MAE=0.021844 final_MAE=0.016816 resid_MAE=0.016816 | gamma=0.800
+Epoch 08 | lr=4.59e-04 | train_loss=0.015675 | VAL base_MAE=0.021844 final_MAE=0.016539 resid_MAE=0.016539 | gamma=0.825
+Epoch 09 | lr=3.59e-04 | train_loss=0.013848 | VAL base_MAE=0.021844 final_MAE=0.016329 resid_MAE=0.016329 | gamma=0.850
+Epoch 10 | lr=2.65e-04 | train_loss=0.012132 | VAL base_MAE=0.021844 final_MAE=0.016963 resid_MAE=0.016963 | gamma=0.825
+Epoch 11 | lr=1.82e-04 | train_loss=0.010868 | VAL base_MAE=0.021844 final_MAE=0.016544 resid_MAE=0.016544 | gamma=0.825
+Epoch 12 | lr=1.14e-04 | train_loss=0.010153 | VAL base_MAE=0.021844 final_MAE=0.016818 resid_MAE=0.016818 | gamma=0.825
+Epoch 13 | lr=6.24e-05 | train_loss=0.009474 | VAL base_MAE=0.021844 final_MAE=0.016633 resid_MAE=0.016633 | gamma=0.850
+Epoch 14 | lr=3.07e-05 | train_loss=0.009128 | VAL base_MAE=0.021844 final_MAE=0.016839 resid_MAE=0.016839 | gamma=0.825
+Epoch 15 | lr=2.00e-05 | train_loss=0.008885 | VAL base_MAE=0.021844 final_MAE=0.016737 resid_MAE=0.016737 | gamma=0.825
+[VAL]  base_MAE=0.021844 | final_MAE=0.016078 | resid_MAE=0.016078 | n=17943 | gamma=0.800
+[TEST] base_MAE=0.021760 | final_MAE=0.016600 | resid_MAE=0.016600 | n=55546 | gamma=0.800
+Saved model: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\model_RESCTX_OOF_pred_core_gru.pt
+Saved: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\predictions_val_RESCTX_OOF_pred_core_gru.csv
+Saved: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\predictions_test_RESCTX_OOF_pred_core_gru.csv
+PS E:\RAW_DATA> & D:/Anaconda/envs/pytorch/python.exe e:/RAW_DATA/scripts/09Z_train_best.py
+Base HGBR MAE: 0.021760
+Gamma=0.00 | MAE=0.021760
+Gamma=0.05 | MAE=0.021216
+Gamma=0.10 | MAE=0.020694
+Gamma=0.15 | MAE=0.020196
+Gamma=0.20 | MAE=0.019723
+Gamma=0.25 | MAE=0.019275
+Gamma=0.30 | MAE=0.018857
+Gamma=0.35 | MAE=0.018467
+Gamma=0.40 | MAE=0.018107
+Gamma=0.45 | MAE=0.017778
+Gamma=0.50 | MAE=0.017481
+Gamma=0.55 | MAE=0.017221
+Gamma=0.60 | MAE=0.017005
+Gamma=0.65 | MAE=0.016834
+Gamma=0.70 | MAE=0.016709
+Gamma=0.75 | MAE=0.016630
+Gamma=0.80 | MAE=0.016600
+Gamma=0.85 | MAE=0.016623
+Gamma=0.90 | MAE=0.016700
+Gamma=0.95 | MAE=0.016832
+Gamma=1.00 | MAE=0.017020
+------------------------------
+【最佳结果】gru Gamma = 0.80
+【最低 MAE】 0.016600
+【提升幅度】 -15.49%
+
+PS E:\RAW_DATA> & D:/Anaconda/envs/pytorch/python.exe e:/RAW_DATA/scripts/09R_train_residual_corrector.py
+Base Pred Stats: mu=0.8243 std=0.0213
+Start RESIDUAL+CTX | BASE=pred_core MODEL=tcn | seq_len=64 d_in=30 | train=190175 val=17943 test=55546 | LR=0.001 WD=0.0001 EPOCHS=15 BATCH=512
+Residual standardize: mu=0.000672 std=0.029226
+Epoch 01 | lr=9.89e-04 | train_loss=0.393107 | VAL base_MAE=0.021844 final_MAE=0.021375 resid_MAE=0.021375 | gamma=0.675
+Epoch 02 | lr=9.58e-04 | train_loss=0.364322 | VAL base_MAE=0.021844 final_MAE=0.021585 resid_MAE=0.021585 | gamma=0.425
+Epoch 03 | lr=9.06e-04 | train_loss=0.342671 | VAL base_MAE=0.021844 final_MAE=0.021316 resid_MAE=0.021316 | gamma=0.500
+Epoch 04 | lr=8.38e-04 | train_loss=0.327647 | VAL base_MAE=0.021844 final_MAE=0.021334 resid_MAE=0.021334 | gamma=0.500
+Epoch 05 | lr=7.55e-04 | train_loss=0.315921 | VAL base_MAE=0.021844 final_MAE=0.020896 resid_MAE=0.020896 | gamma=0.625
+Epoch 06 | lr=6.61e-04 | train_loss=0.307060 | VAL base_MAE=0.021844 final_MAE=0.020658 resid_MAE=0.020658 | gamma=0.675
+Epoch 07 | lr=5.61e-04 | train_loss=0.300678 | VAL base_MAE=0.021844 final_MAE=0.020677 resid_MAE=0.020677 | gamma=0.700
+Epoch 08 | lr=4.59e-04 | train_loss=0.294499 | VAL base_MAE=0.021844 final_MAE=0.020546 resid_MAE=0.020546 | gamma=0.700
+Epoch 09 | lr=3.59e-04 | train_loss=0.290186 | VAL base_MAE=0.021844 final_MAE=0.020580 resid_MAE=0.020580 | gamma=0.650
+Epoch 10 | lr=2.65e-04 | train_loss=0.286016 | VAL base_MAE=0.021844 final_MAE=0.020441 resid_MAE=0.020441 | gamma=0.700
+Epoch 11 | lr=1.82e-04 | train_loss=0.283412 | VAL base_MAE=0.021844 final_MAE=0.020590 resid_MAE=0.020590 | gamma=0.625
+Epoch 12 | lr=1.14e-04 | train_loss=0.280472 | VAL base_MAE=0.021844 final_MAE=0.020288 resid_MAE=0.020288 | gamma=0.700
+Epoch 13 | lr=6.24e-05 | train_loss=0.278905 | VAL base_MAE=0.021844 final_MAE=0.020420 resid_MAE=0.020420 | gamma=0.675
+Epoch 14 | lr=3.07e-05 | train_loss=0.278028 | VAL base_MAE=0.021844 final_MAE=0.020406 resid_MAE=0.020406 | gamma=0.675
+Epoch 15 | lr=2.00e-05 | train_loss=0.276697 | VAL base_MAE=0.021844 final_MAE=0.020426 resid_MAE=0.020426 | gamma=0.675
+[VAL]  base_MAE=0.021844 | final_MAE=0.020288 | resid_MAE=0.020288 | n=17943 | gamma=0.700
+[TEST] base_MAE=0.021760 | final_MAE=0.020547 | resid_MAE=0.020547 | n=55546 | gamma=0.700
+Saved model: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\model_RESCTX_OOF_pred_core_tcn.pt
+Saved: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\predictions_val_RESCTX_OOF_pred_core_tcn.csv
+Saved: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\predictions_test_RESCTX_OOF_pred_core_tcn.csv
+PS E:\RAW_DATA> & D:/Anaconda/envs/pytorch/python.exe e:/RAW_DATA/scripts/09Z_train_best.py
+Base HGBR MAE: 0.021760
+Gamma=0.00 | MAE=0.021760
+Gamma=0.05 | MAE=0.021605
+Gamma=0.10 | MAE=0.021460
+Gamma=0.15 | MAE=0.021325
+Gamma=0.20 | MAE=0.021199
+Gamma=0.25 | MAE=0.021085
+Gamma=0.30 | MAE=0.020984
+Gamma=0.35 | MAE=0.020895
+Gamma=0.40 | MAE=0.020815
+Gamma=0.45 | MAE=0.020744
+Gamma=0.50 | MAE=0.020683
+Gamma=0.55 | MAE=0.020633
+Gamma=0.60 | MAE=0.020593
+Gamma=0.65 | MAE=0.020564
+Gamma=0.70 | MAE=0.020547
+Gamma=0.75 | MAE=0.020541
+Gamma=0.80 | MAE=0.020547
+Gamma=0.85 | MAE=0.020565
+Gamma=0.90 | MAE=0.020595
+Gamma=0.95 | MAE=0.020637
+Gamma=1.00 | MAE=0.020693
+------------------------------
+【最佳结果】 tcn Gamma = 0.75
+【最低 MAE】 0.020541
+【提升幅度】 -42.91%
+
+
+PS E:\RAW_DATA> & D:/Anaconda/envs/pytorch/python.exe e:/RAW_DATA/scripts/09R_train_residual_corrector.py
+Base Pred Stats: mu=0.8243 std=0.0213
+Start RESIDUAL+CTX | BASE=pred_core MODEL=tfmr | seq_len=64 d_in=30 | train=190175 val=17943 test=55546 | LR=0.001 WD=0.0001 EPOCHS=15 BATCH=512
+Residual standardize: mu=0.000672 std=0.029226
+D:\Anaconda\envs\pytorch\Lib\site-packages\torch\nn\modules\transformer.py:392: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+Epoch 01 | lr=9.89e-04 | train_loss=0.160999 | VAL base_MAE=0.021844 final_MAE=0.017848 resid_MAE=0.017848 | gamma=0.725
+Epoch 02 | lr=9.58e-04 | train_loss=0.054522 | VAL base_MAE=0.021844 final_MAE=0.018154 resid_MAE=0.018154 | gamma=0.650
+Epoch 03 | lr=9.06e-04 | train_loss=0.032559 | VAL base_MAE=0.021844 final_MAE=0.017750 resid_MAE=0.017750 | gamma=0.750
+Epoch 04 | lr=8.38e-04 | train_loss=0.023240 | VAL base_MAE=0.021844 final_MAE=0.017078 resid_MAE=0.017078 | gamma=0.750
+Epoch 05 | lr=7.55e-04 | train_loss=0.018660 | VAL base_MAE=0.021844 final_MAE=0.016998 resid_MAE=0.016998 | gamma=0.775
+Epoch 06 | lr=6.61e-04 | train_loss=0.015312 | VAL base_MAE=0.021844 final_MAE=0.016808 resid_MAE=0.016808 | gamma=0.775
+Epoch 07 | lr=5.61e-04 | train_loss=0.013048 | VAL base_MAE=0.021844 final_MAE=0.016836 resid_MAE=0.016836 | gamma=0.775
+Epoch 08 | lr=4.59e-04 | train_loss=0.011310 | VAL base_MAE=0.021844 final_MAE=0.017009 resid_MAE=0.017009 | gamma=0.775
+Epoch 09 | lr=3.59e-04 | train_loss=0.010091 | VAL base_MAE=0.021844 final_MAE=0.017285 resid_MAE=0.017285 | gamma=0.775
+Epoch 10 | lr=2.65e-04 | train_loss=0.008964 | VAL base_MAE=0.021844 final_MAE=0.016988 resid_MAE=0.016988 | gamma=0.775
+Epoch 11 | lr=1.82e-04 | train_loss=0.008159 | VAL base_MAE=0.021844 final_MAE=0.016931 resid_MAE=0.016931 | gamma=0.775
+Epoch 12 | lr=1.14e-04 | train_loss=0.007529 | VAL base_MAE=0.021844 final_MAE=0.017012 resid_MAE=0.017012 | gamma=0.775
+Epoch 13 | lr=6.24e-05 | train_loss=0.007047 | VAL base_MAE=0.021844 final_MAE=0.016827 resid_MAE=0.016827 | gamma=0.800
+Epoch 14 | lr=3.07e-05 | train_loss=0.006654 | VAL base_MAE=0.021844 final_MAE=0.016962 resid_MAE=0.016962 | gamma=0.775
+Epoch 15 | lr=2.00e-05 | train_loss=0.006457 | VAL base_MAE=0.021844 final_MAE=0.016875 resid_MAE=0.016875 | gamma=0.775
+[VAL]  base_MAE=0.021844 | final_MAE=0.016808 | resid_MAE=0.016808 | n=17943 | gamma=0.775
+[TEST] base_MAE=0.021760 | final_MAE=0.016559 | resid_MAE=0.016559 | n=55546 | gamma=0.775
+Saved model: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\model_RESCTX_OOF_pred_core_tfmr.pt
+Saved: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\predictions_val_RESCTX_OOF_pred_core_tfmr.csv
+Saved: E:\RAW_DATA\outputs\09_seq_featcore\09_residual\predictions_test_RESCTX_OOF_pred_core_tfmr.csv
+PS E:\RAW_DATA> & D:/Anaconda/envs/pytorch/python.exe e:/RAW_DATA/scripts/09Z_train_best.py
+Base HGBR MAE: 0.021760
+Gamma=0.00 | MAE=0.021760
+Gamma=0.05 | MAE=0.021248
+Gamma=0.10 | MAE=0.020756
+Gamma=0.15 | MAE=0.020285
+Gamma=0.20 | MAE=0.019837
+Gamma=0.25 | MAE=0.019409
+Gamma=0.30 | MAE=0.019002
+Gamma=0.35 | MAE=0.018617
+Gamma=0.40 | MAE=0.018257
+Gamma=0.45 | MAE=0.017923
+Gamma=0.50 | MAE=0.017620
+Gamma=0.55 | MAE=0.017350
+Gamma=0.60 | MAE=0.017115
+Gamma=0.65 | MAE=0.016913
+Gamma=0.70 | MAE=0.016746
+Gamma=0.75 | MAE=0.016613
+Gamma=0.80 | MAE=0.016513
+Gamma=0.85 | MAE=0.016449
+Gamma=0.90 | MAE=0.016427
+Gamma=0.95 | MAE=0.016455
+Gamma=1.00 | MAE=0.016541
+------------------------------
+【最佳结果】 tfmr Gamma = 0.90
+【最低 MAE】 0.016427
+【提升幅度】 -14.28%
